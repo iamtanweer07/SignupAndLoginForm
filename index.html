@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/af8bdd189b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form_box">
+      <h1 id="form_title">Sign Up</h1>
+      <form>
+        <div class="input-group">
+          <div class="input-field" id="nameField">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Name">
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email">
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <p>Forgot Password <a href="#">Click Here!</a></p>
+        </div>
+        <div class="btn_field">
+          <button type="button" id="signupBtn">Sign up</button>
+          <button type="button" id="signinBtn" class="disablebtn">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let form_title = document.getElementById("form_title");
+    let nameField = document.getElementById("nameField");
+    let signupBtn = document.getElementById("signupBtn");
+    let signinBtn = document.getElementById("signinBtn");
+
+    signinBtn.onclick = function(){
+      nameField.style.maxHeight = "0";
+      form_title.textContent = "Sign In";
+      signupBtn.classList.add("disablebtn")
+      signinBtn.classList.remove("disablebtn")
+    }
+
+    signupBtn.onclick = function(){
+      nameField.style.maxHeight = "60px";
+      form_title.textContent = "Sign Up";
+      signupBtn.classList.remove("disablebtn")
+      signinBtn.classList.add("disablebtn")
+    }
+
+
+
+  </script>
+</body>
+</html>
